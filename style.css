@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    color: aliceblue;
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+   
+}
+
+.container{
+    padding: 10px 5%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+.name-logo{
+    width: 240px;
+    color: #d63668;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+
+}
+
+nav ul li a::after{
+    content:'';
+    height: 3px;
+    width: 0;
+    background-color: #ff004f;
+    bottom: -6px;
+    position: absolute;
+    left: 0;
+    transition: 0.4s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.nav-text{
+    margin: 10%;
+    margin-top: 20%;
+    font-size: 20px;
+}
+
+.nav-text h1 {
+  margin-top: 25px;
+  font-size: 40px;
+  /* padding: 40px 0px; */
+}
+
+.nav-text span {
+    color: #ff004f;
+}
+
+
+
+
+
+    /* <!-------------------------- about me -----------------------> */
+
+
+#about{
+    padding: 80px 0px;
+}
+
+.row{
+    display: flex; /* for content side by side */
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.col-1{
+    flex-basis: 30%; /* it will done column 35% in width */ 
+}
+
+.col-1:hover img{
+    transform: scale(1.05);
+}
+
+.col-1 img {
+    width: 90%;
+    border-radius: 25px;
+    transition: transform 0.7s;
+}
+
+.col-2{
+    flex-basis: 60%;
+}
+
+.sub-titles{
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 45px 0px 25px;
+}
+
+.tab-links{
+    color: #f02162;
+   margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background-color: #fafafa;
+    bottom: -6px;
+    position: absolute;
+    left: 0;
+    transition: 0.4s;
+}  
+
+.tab-links.active-link::after{
+    width: 70%;
+}
+
+.tab-contents ul li{
+    margin: 10px 0px;
+    list-style: none;
+    font-size: 15px;
+}
+
+.tab-contents ul li span{
+    font-size: 14px;
+    color: #d63668;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/*------------------------------ services ---------------------------- */
+
+#services{
+    padding: 30px 0px;
+
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 40px;
+}
+
+.services-list h2{
+    font-size: 30px;
+    /* color: #d63668; */
+    margin-top: 2.5px;
+    margin-bottom: 10px;
+}
+
+.services-list div{
+    background-color: #262626;
+    padding: 45px;
+    border-radius: 20px;
+    font-weight: 200;
+    font-size: 14px;
+    transition: background 0.6s, transform 0.6s;
+}
+
+.services-list div i{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.services-list a{
+    margin-top: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    color: #fafafa;
+}
+
+.services-list div:hover{
+    background: #f02162;
+    transform: translateY(-10px);
+}
+
+        /* ----------------------------  portfolio  -------------------------- */
+
+#portfolio{
+    padding: 50px 0px;
+}    
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 40px;
+}
+
+.work{
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    
+}
+
+.work img{
+    display: block;
+    width: 100%;
+    transition: transform 0.6s; 
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.layer{
+   height: 0%;
+   width: 100%;
+   background: linear-gradient(rgba(0,0,0,0.4),#d63668);
+   position: absolute;
+   border-radius: 20px;
+   overflow: hidden;
+   left: 0;
+   bottom: 0;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   padding: 0px 30px;
+   transition: height 0.5s;
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.layer h3,a{
+    font-weight: 600;
+    margin: 5px 0px;
+    font-size: 25px;    
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border : 2px solid #ff004f;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #fafafa;
+}
+
+/* ----------------------------  Contact Me --------------------------------- */
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.social-icons a{
+    margin: 3px;
+    text-decoration: none;
+    color: #ababab;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.contact-right{
+    flex-basis: 60%;
+}
+
+.btn.btn1{
+    margin-top: 20px;
+    background-color: #f02162;
+    display: inline-block;
+}
+
+/* .contact-right form{
+    width: 100%;
+} */
+
+form input,form textarea{
+    border-radius: 10px;
+    color: white;
+    width: 100%; 
+    background-color: #262626;
+    padding: 15px;
+    border: 0;
+    font-size: 18px;
+    margin: 5px 5px;
+}
+
+
+ /* ------------------------------------ footer -------------------------------------*/
+
+
+footer{
+    height: 60px;
+    background-color: #262626;
+}
+
+.copyright{
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* -------------------- css for small screen --------------------------- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(images/phone-background.png);
+    }
+    .nav-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .nav-text h1{
+        font-size: 25px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul{
+        background-color: #ff0051;
+        position: fixed ;
+        top: 0;
+        right: -230px;
+        width: 230px;
+        height: 100vh;
+        padding-top: 70px;
+        transition: right 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        padding: 7px 5px;
+    }
+
+    nav ul .fas{
+        top: 20px;
+        left: 10px;
+        position: absolute;
+
+    }
+
+
+
+}
